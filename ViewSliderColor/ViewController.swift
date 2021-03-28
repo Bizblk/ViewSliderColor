@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         viewForSlider.layer.cornerRadius = 15
         setupLabels()
         setupSliders()
+        changeViewColor()
     }
     
     //MARK: IB - Action
