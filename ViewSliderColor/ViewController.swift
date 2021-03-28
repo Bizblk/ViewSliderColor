@@ -27,36 +27,41 @@ class ViewController: UIViewController {
         setupLabels()
         setupSliders()
     }
-
+    
+    //MARK: IB - Action
     @IBAction func redSliderAction() {
+        changeViewColor()
         redLabel.text = "Red: \(String(format: "%.2f", redSlider.value))"
-        viewForSlider.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
     @IBAction func greenSliderAction() {
+        changeViewColor()
         greenLabel.text = "Green: \(String(format: "%.2f", greenSlider.value))"
-        viewForSlider.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
     @IBAction func blueSliderAction() {
+        changeViewColor()
         blueLabel.text = "Blue: \(String(format: "%.2f", blueSlider.value))"
-        viewForSlider.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
     
-    func setupSliders() {
+    private func setupSliders() {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
     }
     
-    func setupLabels() {
+    private func setupLabels() {
         redLabel.text = "Red: \(String(format: "%.2f", redSlider.value))"
         greenLabel.text = "Green: \(String(format: "%.2f", greenSlider.value))"
         blueLabel.text = "Blue: \(String(format: "%.2f", blueSlider.value))"
-        viewForSlider.backgroundColor = UIColor.init(red: 260, green: 270, blue: 280, alpha: 1)
     }
     
+    private func changeViewColor() {
+        viewForSlider.backgroundColor = .init(red: CGFloat(redSlider.value),
+                                              green: CGFloat(greenSlider.value),
+                                              blue: CGFloat(blueSlider.value),
+                                              alpha: 1)
+    }
 }
 
-//String(format: "%.3f", totalWorkTimeInHours)
 
 
 
