@@ -14,8 +14,6 @@ protocol MainViewControllerDelegate {
 
 class MainViewController: UIViewController, MainViewControllerDelegate {
     
-    
-    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "settingsSegue" else { return }
         guard  let settingsVC = segue.destination as? SettingsViewController else { return }
@@ -23,7 +21,6 @@ class MainViewController: UIViewController, MainViewControllerDelegate {
         settingsVC.delegate = self
     }
     
-    //
     func setColor(color: UIColor) {
         self.view.backgroundColor = color
     }
